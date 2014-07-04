@@ -19,4 +19,4 @@
 config/database.yml
 
 # Exported Files
-lib/export/
+lib/export*

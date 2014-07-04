@@ -1,4 +1,5 @@
 body > header {
+  position: relative;
   background: $color-1;
   padding: 15px 25px;
   @include box-sizing(border-box);
@@ -13,6 +14,32 @@ body > header {
       font-size: 24px;
       color: $color-light;
       @include transition-all;
+    }
+  }
+
+  nav {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    width: auto;
+    ul {
+      li {
+        a {
+          margin: 0;
+          padding: 0;
+          &.button {
+            margin: 0;
+            padding: 8px 15px;
+            background: transparent;
+            border: 1px solid $color-light;
+            font-size: 15px;
+            &:hover {
+              background: $color-light;
+              color: $color-1;
+            }
+          }
+        }
+      }
     }
   }
 }

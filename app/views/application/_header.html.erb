@@ -2,4 +2,12 @@
   <h1>
     <%= link_to SETTINGS[:site][:title], root_path %>
   </h1>
+  <nav>
+    <ul>
+      <li>
+        <%= link_to 'UPDATE CONFIG', update_config_path, :method => :post, 
+          :class => 'button' %>
+      </li>
+    </ul>
+  </nav>
 </header>

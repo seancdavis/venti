@@ -3,6 +3,6 @@ SETTINGS = {
     :title => "SSH Config"
   },
   :exports => {
-    :dir => "#{Rails.root}/lib/export_2"
+    :dir => "#{Rails.root}/lib/export"
   }
 }
