@@ -1,7 +1,7 @@
 body > header {
   position: relative;
   background: $color-1;
-  padding: 15px 25px;
+  padding: 5px 25px;
   @include box-sizing(border-box);
 
   h1 {
@@ -10,17 +10,21 @@ body > header {
     line-height: 24px;
     font-size: 24px;
     a {
-      line-height: 24px;
-      font-size: 24px;
+      height: 54px;
       color: $color-light;
       @include transition-all;
+      i {
+        color: $color-light;
+        font-size: 54px;
+        line-height: 54px;
+      }
     }
   }
 
   nav {
     position: absolute;
     right: 25px;
-    top: 10px;
+    top: 15px;
     width: auto;
     ul {
       li {
