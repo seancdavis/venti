@@ -17,3 +17,6 @@
 
 # Sensitive Files
 config/database.yml
+
+# Exported Files
+lib/export/
