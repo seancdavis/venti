@@ -1,0 +1,7 @@
+Host <%= @server.host %>
+HostName <%= @server.host_name %>
+User <%= @server.user %>
+<% unless @server.port.blank? %>
+Port <%= @server.port %>
+<% end %>
+
