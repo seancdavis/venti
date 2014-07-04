@@ -1,7 +1,5 @@
 class ServersController < ApplicationController
 
-  include ApplicationHelper
-
   def index
     @server = Server.new
   end

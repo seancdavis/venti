@@ -1,7 +1,7 @@
 class ConfigController < ApplicationController
 
   def show
-    @file_contents = File.read("#{SETTINGS[:exports][:dir]}/config")
+    @file_contents = File.read("#{settings['exports']['dir']}/config")
   end
 
   def update

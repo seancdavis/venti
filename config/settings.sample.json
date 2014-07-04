@@ -3,6 +3,6 @@
     "title": "Venti"
   },
   "exports": {
-    "dir": "#{Rails.root}/lib/export"
+    "dir": "#{root}/lib/export"
   }
 }
