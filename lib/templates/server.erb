@@ -1,3 +1,6 @@
+<% unless @server.description.blank? %>
+# <%= @server.description %>
+<% end %>
 Host <%= @server.host %>
 HostName <%= @server.host_name %>
 User <%= @server.user %>

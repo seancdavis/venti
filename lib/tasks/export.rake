@@ -9,10 +9,12 @@ namespace :export do
     master_file_contents = ''
     master_file = "#{data_dir}/config"
     Account.all.includes(:servers).each do |account|
-      file_contents = ''
+      @account = account
+      file_contents = template "server_comment"
       file = "#{data_dir}/config_#{account.name.underscore.downcase}"
       account.servers.each do |server|
-        file_contents += template "server", server
+        @server = server
+        file_contents += template "server"
       end
       File.open(file, 'w') { |file| file.write(file_contents) }
       master_file_contents += file_contents
@@ -23,9 +25,8 @@ namespace :export do
 
   end
 
-  def template(name, server)
+  def template(name)
     require 'erb'
-    @server = server
     renderer = ERB.new(File.read("#{Rails.root}/lib/templates/#{name}.erb"), 0, '<>')
     renderer.result
   end
