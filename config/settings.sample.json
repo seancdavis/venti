@@ -1,0 +1,8 @@
+{
+  "site": {
+    "title": "Venti"
+  },
+  "exports": {
+    "dir": "#{Rails.root}/lib/export"
+  }
+}

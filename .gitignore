@@ -17,6 +17,7 @@
 
 # Sensitive Files
 config/database.yml
+config/settings.json
 
 # Exported Files
 lib/export*

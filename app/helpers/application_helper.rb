@@ -12,8 +12,12 @@ module ApplicationHelper
     @servers ||= account.servers
   end
 
-  # def breadcrumbs
-  #   raise request.fullpath.split('/').inspect
-  # end
+  def settings
+    @settings ||= begin
+      require 'json'
+      settings = File.read("#{Rails.root}/config/settings.json")
+      JSON.parse(settings)
+    end
+  end
 
 end
