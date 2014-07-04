@@ -5,6 +5,9 @@
   <nav>
     <ul>
       <li>
+        <%= link_to 'View Config', config_path %>
+      </li>
+      <li>
         <%= link_to 'UPDATE CONFIG', update_config_path, :method => :post, 
           :class => 'button' %>
       </li>
