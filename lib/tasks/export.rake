@@ -2,10 +2,11 @@ namespace :export do
 
   desc 'write files'
   task :data => :environment do
-    data_dir = "#{Rails.root}/lib/export"
+    data_dir = SETTINGS[:exports][:dir]
     FileUtils.mkdir(data_dir) unless File.exist?(data_dir)
 
     master_file_contents = ''
+    master_file = "#{data_dir}/config"
     Account.all.includes(:servers).each do |account|
       file_contents = ''
       file = "#{data_dir}/config_#{account.name.underscore.downcase}"
@@ -14,8 +15,10 @@ namespace :export do
       end
       File.open(file, 'w') { |file| file.write(file_contents) }
       master_file_contents += file_contents
+      puts "WROTE #{account.name} CONFIG >> #{file}"
     end
-    File.open("#{data_dir}/config", 'w') { |file| file.write(master_file_contents) }
+    File.open(master_file, 'w') { |file| file.write(master_file_contents) }
+    puts "WROTE MASTER FILE >> #{master_file}"
 
   end
 
