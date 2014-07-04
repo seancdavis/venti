@@ -21,3 +21,6 @@ config/settings.json
 
 # Exported Files
 lib/export*
+
+# Stupid Files
+*.DS_Store
