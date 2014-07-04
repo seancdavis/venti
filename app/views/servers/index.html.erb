@@ -1,11 +1,26 @@
-<h1><%= account.name %></h1>
+<section class="breadcrumbs">
+  <nav>
+    <ul>
+      <li>
+        <%= link_to 'accounts', accounts_path %>
+      </li>
+      >>
+      <li>
+        <%= link_to account.name.humanize.downcase, account_servers_path(account) %>
+      </li>
+    </ul>
+  </nav>
+</section>
 
-<%= simple_form_for @server, :url => account_servers_path(@account) do |f| %>
-  <%= f.input :host %>
-  <%= f.input :host_name %>
-  <%= f.input :user %>
-  <%= f.input :port %>
-  <%= f.button :submit %>
-<% end %>
+<section class="form">
+  <h2>New Server</h2>
+  <%= simple_form_for @server, :url => account_servers_path(account) do |f| %>
+    <%= f.input :host %>
+    <%= f.input :host_name %>
+    <%= f.input :user %>
+    <%= f.input :port %>
+    <%= f.button :submit %>
+  <% end %>
+</section>
 
 <%= render servers %>

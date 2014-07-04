@@ -1,8 +1,9 @@
-<h1>Hello!</h1>
-
-<%= simple_form_for @account do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
+<section class="form">
+  <h2>New Account</h2>
+  <%= simple_form_for @account do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit %>
+  <% end %>
+</section>
 
 <%= render accounts %>

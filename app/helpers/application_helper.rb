@@ -12,4 +12,8 @@ module ApplicationHelper
     @servers ||= account.servers
   end
 
+  # def breadcrumbs
+  #   raise request.fullpath.split('/').inspect
+  # end
+
 end
