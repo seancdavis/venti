@@ -1,1 +1,11 @@
-<h1>Hello!</h1>
+<h1><%= account.name %></h1>
+
+<%= simple_form_for @server, :url => account_servers_path(@account) do |f| %>
+  <%= f.input :host %>
+  <%= f.input :host_name %>
+  <%= f.input :user %>
+  <%= f.input :port %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= render servers %>

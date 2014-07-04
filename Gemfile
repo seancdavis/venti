@@ -18,6 +18,7 @@ gem 'bourbon'
 # ------------------------------------------ Helpers
 
 gem 'hirb'
+gem 'simple_form'
 
 # ------------------------------------------ Development/Test
 
