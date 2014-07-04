@@ -11,7 +11,11 @@
   </head>
   <body>
 
-    <%= yield %>
+    <%= render :partial => 'header' %>
+
+    <div id="container">
+      <%= yield %>
+    </div>
 
     <%= javascript_include_tag 'application' %>
   </body>
