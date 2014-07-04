@@ -15,6 +15,7 @@
 <section class="form">
   <h1>New Server</h1>
   <%= simple_form_for @server, :url => account_servers_path(account) do |f| %>
+    <%= f.input :description %>
     <%= f.input :host %>
     <%= f.input :host_name %>
     <%= f.input :user %>
