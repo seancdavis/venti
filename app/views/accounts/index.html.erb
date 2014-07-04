@@ -1,9 +1,12 @@
 <section class="form">
-  <h2>New Account</h2>
+  <h1>New Account</h1>
   <%= simple_form_for @account do |f| %>
     <%= f.input :name %>
     <%= f.button :submit %>
   <% end %>
 </section>
 
-<%= render accounts %>
+<section class="accounts">
+  <h1>Accounts</h1>
+  <%= render accounts %>
+</section>

@@ -16,4 +16,48 @@
       }
     }
   }
+
+
+  .servers, .accounts {
+    margin-top: 25px;
+    border-top: 1px solid $color-light-dark;
+
+    .account {
+      .title {
+        margin: 25px 0 0 0;
+        font-size: 24px;
+        line-height: 24px;
+        a {
+          margin: 0;
+          padding: 0;
+          font-size: 24px;
+          font-weight: 600;
+          color: rgba($color-1, .75);
+          @include transition-all;
+          &:hover {
+            color: $color-1;
+          }
+        }
+      }
+    }
+
+    .server {
+      width: 500px;
+      margin: 15px 0;
+      padding: 15px;
+      border: 1px solid $color-light-darker;
+
+      .title {
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        font-weight: 400;
+        color: $color-2;
+      }
+      .host-name {
+        font-size: 28px;
+        margin: 15px 0 0 0;
+      }
+    }
+  }
 }

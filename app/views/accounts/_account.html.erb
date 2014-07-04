@@ -1,2 +1,6 @@
-<h2><%= link_to account.name, account_servers_path(account) %></h2>
-<%= render account.servers %>
+<article class="account">
+  <h2 class="title">
+    <%= link_to account.name, account_servers_path(account) %>
+  </h2>
+  <%= render account.servers %>
+</article>

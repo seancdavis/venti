@@ -14,4 +14,8 @@ class Account < ActiveRecord::Base
 
   has_many :servers
 
+  # ------------------------------------------ Scopes
+
+  default_scope { order('name asc') }
+
 end

@@ -1,3 +1,7 @@
 .button, input[type=submit] {
   @include transition-all;
 }
+
+hr {
+  margin: 15px 0;
+}

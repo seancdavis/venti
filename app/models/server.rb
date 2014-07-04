@@ -18,4 +18,8 @@ class Server < ActiveRecord::Base
 
   belongs_to :account
 
+  # ------------------------------------------ Scopes
+
+  default_scope { order('host asc') }
+
 end
