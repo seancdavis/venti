@@ -2,7 +2,8 @@ namespace :export do
 
   desc 'write files'
   task :data => :environment do
-    data_dir = SETTINGS[:exports][:dir]
+    include ApplicationHelper
+    data_dir = settings['exports']['dir']
     FileUtils.mkdir(data_dir) unless File.exist?(data_dir)
 
     master_file_contents = ''
