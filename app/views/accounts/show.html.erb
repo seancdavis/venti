@@ -2,11 +2,11 @@
   <nav>
     <ul>
       <li>
-        <%= link_to 'accounts', accounts_path %>
+        <%= link_to 'home', accounts_path %>
       </li>
       >>
       <li>
-        <%= link_to account.name.humanize.downcase, account_servers_path(account) %>
+        <%= link_to account.name.humanize.downcase, account %>
       </li>
     </ul>
   </nav>
@@ -14,7 +14,7 @@
 
 <section class="form">
   <h1>New Server</h1>
-  <%= simple_form_for @server, :url => account_servers_path(account) do |f| %>
+  <%= simple_form_for @server do |f| %>
     <%= f.input :description %>
     <%= f.input :host %>
     <%= f.input :host_name %>

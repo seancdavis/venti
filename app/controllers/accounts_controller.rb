@@ -4,6 +4,10 @@ class AccountsController < ApplicationController
     @account = Account.new
   end
 
+  def show
+    @server = Server.new
+  end
+
   def edit
     @account = account
   end

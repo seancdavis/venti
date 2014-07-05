@@ -1,6 +1,6 @@
 <article class="account">
   <h2 class="title">
-    <%= link_to account.name, account_servers_path(account) %>
+    <%= link_to account.name, account %>
     <%= link_to account, :method => :delete, :class => 'icon', :data => { 
         :confirm => 'This will delete the account and its servers. Proceed?' } do %>
       <i class="icon-remove"></i>
