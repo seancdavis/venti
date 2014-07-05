@@ -1,7 +1,7 @@
 namespace :export do
 
-  desc 'write files'
-  task :data => :environment do
+  desc 'write config files'
+  task :config => :environment do
     include ApplicationHelper
     data_dir = settings['exports']['dir']
     FileUtils.mkdir(data_dir) unless File.exist?(data_dir)

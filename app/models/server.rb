@@ -23,4 +23,8 @@ class Server < ActiveRecord::Base
 
   default_scope { order('host asc') }
 
+  # ------------------------------------------ Validations
+
+  validates :host, :host_name, :user, :presence => true
+
 end

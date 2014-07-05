@@ -7,7 +7,7 @@ class ConfigController < ApplicationController
 
   def update
     require 'rake'
-    system "bundle exec rake export:data"
+    system "bundle exec rake export:config"
     redirect_to config_path
   end
 

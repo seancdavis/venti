@@ -4,5 +4,8 @@
   },
   "exports": {
     "dir": "#{root}/lib/export"
+  },
+  "imports": {
+    "file": "%{home}/.ssh/config"
   }
 }
