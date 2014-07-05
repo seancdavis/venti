@@ -37,9 +37,8 @@ class ServersController < ApplicationController
         :host,
         :host_name,
         :user,
-        :port
-      ).merge(
-        :account => account
+        :port,
+        :account_id
       )
     end
 

@@ -9,9 +9,7 @@ module ApplicationHelper
       if params[:account_id] == 'unattached' || params[:id] == 'unattached'
         return 'unattached'
       end
-      account = Account.find_by_id(params[:account_id])
-      account = Account.find_by_id(params[:id]) if account.nil?
-      account
+      Account.find_by_id(params[:id])
     end
   end
 
@@ -27,9 +25,7 @@ module ApplicationHelper
 
   def server
     @server ||= begin
-      server = Server.find_by_id(params[:server_id])
-      server = Server.find_by_id(params[:id]) if server.nil?
-      server
+      Server.find_by_id(params[:id])
     end
   end
 
