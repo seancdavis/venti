@@ -14,6 +14,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'bones-rails'
 gem 'bourbon'
+gem 'rails-backbone'
 
 # ------------------------------------------ Helpers
 

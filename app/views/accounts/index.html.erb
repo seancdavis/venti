@@ -1,9 +1,9 @@
 <h1>Accounts</h1>
 
 <%= link_to 'add new account', '#', :class => 'form-toggle', :data => { 
-  :form => 'add-new-bucket' } %>
+  :form => 'add-new-account' } %>
 
-<section class="form hide" data-form="add-new-bucket">
+<section class="form hide" data-form="add-new-account">
   <h1>New Account</h1>
   <%= simple_form_for @account do |f| %>
     <%= f.input :name %>
