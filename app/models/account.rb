@@ -18,4 +18,8 @@ class Account < ActiveRecord::Base
 
   default_scope { order('name asc') }
 
+  # ------------------------------------------ Vaidations
+
+  validates :name, :presence => true
+
 end
