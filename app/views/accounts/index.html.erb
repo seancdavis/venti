@@ -13,10 +13,12 @@
 
 <section class="accounts">
   <%= render accounts %>
-  <article class="account">
-    <h2 class="title">
-      <%= link_to '(no account)', '#' %>
-    </h2>
-    <%= render unattached_servers %>
-  </article>
+  <% if unattached_servers.size > 0 %>
+    <article class="account">
+      <h2 class="title">
+        <%= link_to '(no account)', '#' %>
+      </h2>
+      <%= render unattached_servers %>
+    </article>
+  <% end %>
 </section>

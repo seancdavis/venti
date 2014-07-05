@@ -2,5 +2,9 @@
   <h2 class="title">
     <%= link_to account.name, account_servers_path(account) %>
   </h2>
-  <%= render account.servers %>
+  <% if account.servers.size > 0 %>
+    <%= render account.servers %>
+  <% else %>
+    <p><em>No servers for this account.</em></p>
+  <% end %>
 </article>
