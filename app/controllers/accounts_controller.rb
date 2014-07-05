@@ -2,6 +2,7 @@ class AccountsController < ApplicationController
 
   def index
     @account = Account.new
+    @server = Server.new
   end
 
   def show

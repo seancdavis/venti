@@ -1,25 +1,4 @@
-<section class="breadcrumbs">
-  <nav>
-    <ul>
-      <li>
-        <%= link_to 'home', accounts_path %>
-      </li>
-      >>
-      <li>
-        <% if account == 'unattached' %>
-          <%= link_to 'unattached', account_path('unattached') %>
-        <% else %>
-          <%= link_to account.name.humanize.downcase, account %>
-        <% end %>
-      </li>
-    </ul>
-  </nav>
-</section>
-
-<section class="form">
-  <h1>New Server</h1>
-  <%= render :partial => 'server/form' %>
-</section>
+<%= render 'breadcrumbs' %>
 
 <section class="servers">
   <h1 class="title"><%= account == 'unattached' ? 'Unattached' : account.name %> Servers</h1>

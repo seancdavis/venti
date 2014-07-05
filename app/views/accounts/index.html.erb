@@ -2,10 +2,18 @@
 
 <%= link_to 'add new account', '#', :class => 'form-toggle', :data => { 
   :form => 'add-new-account' } %>
+  &nbsp;//&nbsp;
+<%= link_to 'add new server', '#', :class => 'form-toggle', :data => { 
+  :form => 'add-new-server' } %>
 
 <section class="form hide" data-form="add-new-account">
   <h1>New Account</h1>
   <%= render 'form' %>
+</section>
+
+<section class="form hide" data-form="add-new-server">
+  <h1>New Server</h1>
+  <%= render 'servers/form' %>
 </section>
 
 <section class="accounts">
