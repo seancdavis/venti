@@ -5,11 +5,24 @@ module ApplicationHelper
   end
 
   def account
-    @account ||= Account.find(params[:account_id])
+    @account ||= begin
+      if params[:account_id] == 'unattached' || params[:id] == 'unattached'
+        return 'unattached'
+      end
+      account = Account.find_by_id(params[:account_id])
+      account = Account.find_by_id(params[:id]) if account.blank?
+      account
+    end
   end
 
   def servers
-    @servers ||= account.servers
+    @servers ||= begin
+      if account == 'unattached'
+        unattached_servers
+      else
+        account.servers
+      end
+    end
   end
 
   def unattached_servers

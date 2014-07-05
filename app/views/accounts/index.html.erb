@@ -5,10 +5,7 @@
 
 <section class="form hide" data-form="add-new-account">
   <h1>New Account</h1>
-  <%= simple_form_for @account do |f| %>
-    <%= f.input :name %>
-    <%= f.button :submit %>
-  <% end %>
+  <%= render 'form' %>
 </section>
 
 <section class="accounts">

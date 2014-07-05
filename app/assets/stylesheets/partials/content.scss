@@ -20,6 +20,7 @@
 
   .servers, .accounts {
     margin-top: 25px;
+    width: 500px;
 
     .account {
       .title {
@@ -36,14 +37,29 @@
           &:hover {
             color: $color-1;
           }
+          &.icon {
+            float: right;
+            margin-left: 10px;
+            @include transition-all;
+            &:hover {
+              i {
+                color: $color-1;
+              }
+            }
+            i {
+              color: rgba($color-1, .5);
+              font-size: 14px;
+            }
+          }
         }
       }
     }
 
     .server {
-      width: 500px;
+      width: 100%;
       margin: 15px 0;
       padding: 15px;
+      @include box-sizing(border-box);
       border: 1px solid $color-light-darker;
 
       .title {

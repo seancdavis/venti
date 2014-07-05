@@ -4,6 +4,10 @@ class AccountsController < ApplicationController
     @account = Account.new
   end
 
+  def edit
+    @account = account
+  end
+
   def create
     @account = Account.new(account_params)
     if @account.save
@@ -11,6 +15,20 @@ class AccountsController < ApplicationController
     else
       render 'index'
     end
+  end
+
+  def update
+    @account = account
+    if @account.update(account_params)
+      redirect_to accounts_path, :notice => 'Account updated successfully.'
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    account.destroy
+    redirect_to accounts_path, :notice => 'Account (and its servers) deleted successfully.'
   end
 
   private

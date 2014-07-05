@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # ------------------------------------------ Public
 
-  resources :accounts, :only => [:index,:create] do
+  resources :accounts, :except => [:show] do
     resources :servers, :only => [:index,:create]
   end
   post 'config/update' => 'config#update', :as => :update_config
