@@ -1,3 +1,5 @@
+<%= render 'breadcrumbs' %>
+
 <section class="config">
   <h1>Config <code><%= @file %></code></h1>
   <p>last modified <%= time_ago_in_words(File.mtime(@file)) %> ago</p>
