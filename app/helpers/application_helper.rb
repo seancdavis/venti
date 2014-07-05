@@ -10,7 +10,7 @@ module ApplicationHelper
         return 'unattached'
       end
       account = Account.find_by_id(params[:account_id])
-      account = Account.find_by_id(params[:id]) if account.blank?
+      account = Account.find_by_id(params[:id]) if account.nil?
       account
     end
   end
@@ -22,6 +22,14 @@ module ApplicationHelper
       else
         account.servers
       end
+    end
+  end
+
+  def server
+    @server ||= begin
+      server = Server.find_by_id(params[:server_id])
+      server = Server.find_by_id(params[:id]) if server.nil?
+      server
     end
   end
 

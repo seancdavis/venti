@@ -56,12 +56,29 @@
     }
 
     .server {
+      position: relative;
       width: 100%;
       margin: 15px 0;
       padding: 15px;
       @include box-sizing(border-box);
       border: 1px solid $color-light-darker;
 
+      .links {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        a {
+          margin-left: 5px;
+          &:hover {
+            i { color: $color-dark-lighter; }
+          }
+          i {
+            font-size: 14px;
+            color: rgba($color-dark-lighter, .5);
+            @include transition-all;
+          }
+        }
+      }
       .title {
         margin: 0;
         padding: 0;

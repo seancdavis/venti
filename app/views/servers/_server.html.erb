@@ -1,4 +1,13 @@
 <article class="server">
+  <span class="links">
+    <%= link_to edit_server_path(server), :class => 'icon' do %>
+      <i class="icon-pencil"></i>
+    <% end %>
+    <%= link_to server, :method => :delete, :class => 'icon', :data => { 
+        :confirm => 'Are you sure?' } do %>
+      <i class="icon-remove"></i>
+    <% end %>
+  </span>
   <h2 class="title"><%= server.host %></h2>
   <h3 class="host-name">
     <%= server.host_name %>
