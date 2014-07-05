@@ -20,8 +20,8 @@ Getting Started
 
 Setup this Rails app just like you would any other Rails app.
 
-```bash
-$ git clone --branch v0.1 git@github.com:seancdavis/venti.git
+```
+$ git clone --branch v0.2 git@github.com:seancdavis/venti.git
 $ cd venti
 $ bundle install
 ```
@@ -42,7 +42,7 @@ $ bundle exec rake db:migrate
 
 Now you're ready to go. Just start that rails server:
 
-```bash
+```
 $ bundle exec rails s
 ```
 
@@ -52,20 +52,54 @@ servers.
 Settings / Configuration
 ---------------
 
+Create your settings file by copying `config/settings.sample.json` to
+`config/settings.json`. Change the values as appropriate.
+
 By default, Venti will place it's exports in `lib/exports`. You can change this
-and any other setting in `config/initializers/_settings.rb`.
+and any other setting in `config/settings.json`.
+
+### Interpolation
+
+Interpolation of the settings file is preconfigured in the `replace_settings`
+method in the `ApplicationHelper`. Add anything you want to these settings.
+
+```ruby
+def replace_settings
+  {
+    "root" => Rails.root,
+    "home" => File.expand_path("~"),
+  }
+end
+```
+
+Then, you can interpolate strings in your settings file using `%{}`. So, for
+example, you can get your root directory in the settings file with `%{root}`.
+
+Import Existing Config File
+---------------
+
+You can get started by importing your existing config file. First, add the
+location of this file in `config/settings.json`:
+
+```json
+{
+  // ...
+  "imports": {
+    "file": "%{home}/.ssh/config"
+  }
+}
+```
 
 ---
 
 Now, go have some fun. You can manually update every time you make a change by
-clicking the button in the header, or you can configure a cronjob to do all the
+clicking the button in the header, or you can configure a cronjob to do all that
 hard work for you.
 
 Contributing
 ---------------
 
-This was a quick build for me, but it was a fun exercise. I plan to add to this
-in the future. However, if you have a feature request, add an issue, or write
-some code yourself.
+I plan to add to this in the future. If you have a feature request, add an
+issue, or write some code yourself.
 
 Most of all, enjoy!
