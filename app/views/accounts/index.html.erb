@@ -1,4 +1,9 @@
-<section class="form">
+<h1>Accounts</h1>
+
+<%= link_to 'add new account', '#', :class => 'form-toggle', :data => { 
+  :form => 'add-new-bucket' } %>
+
+<section class="form hide" data-form="add-new-bucket">
   <h1>New Account</h1>
   <%= simple_form_for @account do |f| %>
     <%= f.input :name %>
@@ -7,7 +12,6 @@
 </section>
 
 <section class="accounts">
-  <h1>Accounts</h1>
   <%= render accounts %>
   <article class="account">
     <h2 class="title">

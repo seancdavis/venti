@@ -1,3 +1,7 @@
 @mixin transition-all {
   @include transition(all 0.25s linear);
 }
+
+.hide {
+  display: none;
+}
