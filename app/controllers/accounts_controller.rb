@@ -16,7 +16,7 @@ class AccountsController < ApplicationController
   def create
     @account = Account.new(account_params)
     if @account.save
-      redirect_to accounts_path, :notice => 'Account created successfully.'
+      redirect_to root_path, :notice => 'Account created successfully.'
     else
       render 'index'
     end
@@ -25,7 +25,7 @@ class AccountsController < ApplicationController
   def update
     @account = account
     if @account.update(account_params)
-      redirect_to accounts_path, :notice => 'Account updated successfully.'
+      redirect_to root_path, :notice => 'Account updated successfully.'
     else
       render 'edit'
     end
@@ -33,7 +33,7 @@ class AccountsController < ApplicationController
 
   def destroy
     account.destroy
-    redirect_to accounts_path, :notice => 'Account (and its servers) deleted successfully.'
+    redirect_to root_path, :notice => 'Account (and its servers) deleted successfully.'
   end
 
   private
