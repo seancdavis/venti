@@ -12,7 +12,7 @@ class Account < ActiveRecord::Base
 
   # ------------------------------------------ Associations
 
-  has_many :servers
+  has_many :servers, :dependent => :destroy
 
   # ------------------------------------------ Scopes
 
