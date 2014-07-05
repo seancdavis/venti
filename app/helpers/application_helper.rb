@@ -46,7 +46,7 @@ module ApplicationHelper
 
   def replace_settings
     {
-      "root" => "#{Rails.root}",
+      "root" => Rails.root,
       "home" => File.expand_path("~"),
     }
   end
