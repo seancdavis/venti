@@ -12,7 +12,25 @@ namespace :export do
       @account = account
       file_contents = template "server_comment"
       file = "#{data_dir}/config_#{account.name.underscore.downcase}"
-      account.servers.each do |server|
+      if account.servers.size > 0
+        account.servers.each do |server|
+          @server = server
+          file_contents += template "server"
+        end
+      else
+        file_contents += "# No servers for this account\n\n"
+      end
+      File.open(file, 'w') { |file| file.write(file_contents) }
+      master_file_contents += file_contents
+      puts "WROTE #{account.name} CONFIG >> #{file}"
+    end
+    if unattached_servers.size > 0
+      @account = Account.new(
+        :name => 'Other'
+      )
+      file_contents = template "server_comment"
+      file = "#{data_dir}/config_unattached"
+      unattached_servers.each do |server|
         @server = server
         file_contents += template "server"
       end
