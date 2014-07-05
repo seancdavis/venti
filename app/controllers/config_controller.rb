@@ -7,8 +7,14 @@ class ConfigController < ApplicationController
 
   def update
     require 'rake'
-    system "bundle exec rake export:config"
-    redirect_to config_path
+    rake_task = try do
+      system("bundle exec rake export:config")
+    end
+    if rake_task == true
+      redirect_to config_path, :notice => 'Config updated successfully.'
+    else
+      redirect_to config_path, :alert => 'There was a problem updating your config file.'
+    end
   end
 
 end
