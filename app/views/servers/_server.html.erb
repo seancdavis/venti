@@ -9,7 +9,12 @@
     <% end %>
   </span>
   <h2 class="title"><%= server.host %></h2>
+  <% unless server.description.blank? %>
+    <p class="description">
+      <%= server.description %>
+    </p>
+  <% end %>
   <h3 class="host-name">
-    <%= server.host_name %>
+    <%= server.host_name_with_port %>
   </h3>
 </article>

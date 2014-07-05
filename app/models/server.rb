@@ -28,4 +28,14 @@ class Server < ActiveRecord::Base
 
   validates :host, :host_name, :user, :presence => true
 
+  # ------------------------------------------ Instance Methods
+
+  def host_name_with_port
+    if port.blank?
+      host_name
+    else
+      "#{host_name}:#{port}"
+    end
+  end
+
 end
