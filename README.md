@@ -21,7 +21,7 @@ Getting Started
 Setup this Rails app just like you would any other Rails app.
 
 ```
-$ git clone --branch v0.2 git@github.com:seancdavis/venti.git
+$ git clone --branch v0.2.1 git@github.com:seancdavis/venti.git
 $ cd venti
 $ bundle install
 ```
