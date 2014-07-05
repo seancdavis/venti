@@ -9,4 +9,10 @@
 <section class="accounts">
   <h1>Accounts</h1>
   <%= render accounts %>
+  <article class="account">
+    <h2 class="title">
+      <%= link_to '(no account)', '#' %>
+    </h2>
+    <%= render unattached_servers %>
+  </article>
 </section>

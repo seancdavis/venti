@@ -12,6 +12,10 @@ module ApplicationHelper
     @servers ||= account.servers
   end
 
+  def unattached_servers
+    @unattached_servers ||= Server.unattached
+  end
+
   def settings
     @settings ||= begin
       require 'json'

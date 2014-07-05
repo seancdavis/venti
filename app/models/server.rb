@@ -22,6 +22,7 @@ class Server < ActiveRecord::Base
   # ------------------------------------------ Scopes
 
   default_scope { order('host asc') }
+  scope :unattached, -> { where("account_id IS NULL") }
 
   # ------------------------------------------ Validations
 
