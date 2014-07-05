@@ -13,7 +13,7 @@
   <% if unattached_servers.size > 0 %>
     <article class="account">
       <h2 class="title">
-        <%= link_to '(no account)', '#' %>
+        <%= link_to '(no account)', account_path('unattached') %>
       </h2>
       <%= render unattached_servers %>
     </article>

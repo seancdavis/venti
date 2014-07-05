@@ -6,7 +6,11 @@
       </li>
       >>
       <li>
-        <%= link_to account.name.humanize.downcase, account %>
+        <% if account == 'unattached' %>
+          <%= link_to 'unattached', account_path('unattached') %>
+        <% else %>
+          <%= link_to account.name.humanize.downcase, account %>
+        <% end %>
       </li>
     </ul>
   </nav>
@@ -25,6 +29,6 @@
 </section>
 
 <section class="servers">
-  <h1 class="title"><%= account.name %> Servers</h1>
+  <h1 class="title"><%= account == 'unattached' ? 'Unattached' : account.name %> Servers</h1>
   <%= render servers %>
 </section>
