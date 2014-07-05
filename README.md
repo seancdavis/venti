@@ -33,7 +33,7 @@ this to `config/database.yml` and add the appropriate configuration.
 
 Then, get that databse setup:
 
-```bash
+```
 $ bundle exec rake db:create
 $ bundle exec rake db:migrate
 ```
@@ -82,11 +82,8 @@ You can get started by importing your existing config file. First, add the
 location of this file in `config/settings.json`:
 
 ```json
-{
-  // ...
-  "imports": {
-    "file": "%{home}/.ssh/config"
-  }
+"imports": {
+  "file": "%{home}/.ssh/config"
 }
 ```
 
