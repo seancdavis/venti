@@ -6,7 +6,7 @@ namespace :export do
     data_dir = settings['exports']['dir']
     FileUtils.mkdir(data_dir) unless File.exist?(data_dir)
 
-    master_file_contents = ''
+    master_file_contents = "UseRoaming no\n\n"
     master_file = "#{data_dir}/config"
     Account.all.includes(:servers).each do |account|
       @account = account
